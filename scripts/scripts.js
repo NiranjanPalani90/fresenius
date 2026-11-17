@@ -5,6 +5,9 @@ import {
   decorateSections,
   decorateBlocks,
   decorateTemplateAndTheme,
+  readBlockConfig,
+  toCamelCase,
+  toClassName,
   waitForFirstImage,
   loadSection,
   loadSections,
@@ -192,6 +195,25 @@ export function decorateButtons(main) {
   });
 }
 
+/**
+ * Applies section metadata that the backend left in the markup (e.g. local plain-HTML preview).
+ * Edge Delivery normally turns it into section classes (Style) and data attributes server-side.
+ */
+function applySectionMetadata(main) {
+  main.querySelectorAll(':scope > div > .section-metadata').forEach((meta) => {
+    const section = meta.parentElement;
+    Object.entries(readBlockConfig(meta)).forEach(([key, value]) => {
+      if (key === 'style') {
+        String(value).split(',').map((s) => toClassName(s.trim())).filter(Boolean)
+          .forEach((cls) => section.classList.add(cls));
+      } else {
+        section.dataset[toCamelCase(key)] = value;
+      }
+    });
+    meta.remove();
+  });
+}
+
 /** Section metadata extras: anchors, inline layouts, panel headers. */
 function decorateSectionLayouts(main) {
   main.querySelectorAll(':scope > .section').forEach((section) => {
@@ -245,6 +267,7 @@ export function decorateMain(main) {
   decorateIcons(main);
   localizeLinks(main);
   decorateOverlines(main);
+  applySectionMetadata(main);
   decorateSections(main);
   decorateBlocks(main);
   decorateSources(main);
