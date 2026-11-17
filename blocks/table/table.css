@@ -1,0 +1,46 @@
+main .table .table-scroll {
+  overflow-x: auto;
+}
+
+main .table table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+main .table th {
+  text-align: left;
+  font-size: 13px;
+  color: var(--text-3);
+  font-weight: 600;
+  padding: 8px;
+}
+
+main .table td {
+  padding: 12px 8px;
+  border-top: 1px solid rgb(255 255 255 / 70%);
+  color: var(--text-2);
+  vertical-align: top;
+}
+
+main .table td strong {
+  font-weight: 600;
+}
+
+main .table td.u {
+  color: var(--text);
+}
+
+main .table td.t {
+  color: var(--text-brand);
+}
+
+main .table.guidance th:first-child {
+  width: 20%;
+}
+
+main .table.guidance th:nth-child(2),
+main .table.guidance th:nth-child(3) {
+  width: 34%;
+}

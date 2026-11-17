@@ -1,0 +1,29 @@
+main .breadcrumb .crumb {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  line-height: 1.4;
+  color: var(--text-2);
+  background: rgb(255 255 255 / 80%);
+  border-radius: 999px;
+  padding: 8px 14px;
+  box-shadow: 0 2px 8px rgb(0 43 143 / 6%);
+}
+
+main .breadcrumb a:hover {
+  color: var(--text-brand);
+}
+
+main .breadcrumb a svg {
+  display: block;
+}
+
+main .breadcrumb b {
+  color: var(--text-brand);
+  font-weight: 600;
+}
+
+main .section:has(> .breadcrumb-wrapper) + .section {
+  margin-top: calc(var(--s-md) - var(--s-xl));
+}

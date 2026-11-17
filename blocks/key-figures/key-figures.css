@@ -1,0 +1,72 @@
+main .key-figures > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--s-md);
+}
+
+main .key-figures .kpi-col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-sm);
+  min-width: 0;
+}
+
+main .key-figures .kpi {
+  border-radius: var(--r-lg);
+  padding: 20px 24px;
+  background: #fff;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+main .key-figures .kpi .v {
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--text-brand);
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+main .key-figures .kpi .o {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1.4;
+  color: var(--text-3);
+}
+
+main .key-figures .kpi .c {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--text-2);
+}
+
+main .key-figures .kpi.brand {
+  background: var(--brand);
+}
+
+main .key-figures .kpi.brand .v,
+main .key-figures .kpi.brand .o,
+main .key-figures .kpi.brand .c {
+  color: #fff;
+}
+
+@media (width >= 600px) {
+  main .key-figures > ul {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (width >= 1000px) {
+  main .key-figures > ul {
+    grid-template-columns: none;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(0, 1fr);
+  }
+}

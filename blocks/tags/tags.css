@@ -1,0 +1,35 @@
+main .tags .tags-label,
+main .tags-wrapper .tags-label {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--text-2);
+}
+
+main .tags-wrapper .tag {
+  cursor: default;
+}
+
+main .tags-wrapper a.tag,
+main .tags-wrapper button.tag {
+  cursor: pointer;
+}
+
+main .tags-wrapper .tag .x {
+  width: 14px;
+  height: 14px;
+  opacity: 0.85;
+}
+
+main .tags-wrapper .tag.off {
+  opacity: 0.35;
+}
+
+main .tags-wrapper .tag .plus {
+  width: auto;
+  height: auto;
+}
+
+main .lrow[hidden] {
+  display: none;
+}

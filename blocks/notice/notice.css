@@ -1,0 +1,50 @@
+main .notice {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  border-radius: var(--r-lg);
+  padding: 16px 20px;
+  background: rgb(0 43 143 / 6%);
+  border: 1px solid rgb(0 43 143 / 8%);
+}
+
+main .notice .badge {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--brand);
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  color: #fff;
+}
+
+main .notice .badge svg {
+  width: 18px;
+  height: 18px;
+}
+
+main .notice .tx {
+  flex: 1;
+  min-width: 220px;
+}
+
+main .notice .ti {
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--text-brand);
+}
+
+main .notice .desc {
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--text-2);
+}
+
+main .notice .notice-link {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--brand);
+}

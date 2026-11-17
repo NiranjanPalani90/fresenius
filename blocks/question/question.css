@@ -1,0 +1,24 @@
+main .question {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s-md);
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(16px);
+  box-shadow: var(--shadow);
+  border-radius: var(--r-lg);
+  padding: var(--s-lg);
+}
+
+main .question .question-text {
+  flex: 1;
+  min-width: 260px;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+main .question a.button.ghost {
+  padding-left: 8px;
+  padding-right: 8px;
+}

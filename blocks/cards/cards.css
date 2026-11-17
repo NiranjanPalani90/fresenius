@@ -1,27 +1,267 @@
-.cards > ul {
+/* stylelint-disable no-descending-specificity */
+main .cards > ul {
   list-style: none;
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(257px, 1fr));
-  gap: 24px;
+  grid-template-columns: 1fr;
+  gap: var(--s-md);
 }
 
-.cards > ul > li {
-  border: 1px solid #dadada;
-  background-color: var(--background-color);
+main .cards .cards-card {
+  position: relative;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
 }
 
-.cards .cards-card-body {
-  margin: 16px;
+main .cards .cards-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  position: relative;
 }
 
-.cards .cards-card-image {
-  line-height: 0;
+main .cards .cards-card-body p {
+  font-size: 16px;
 }
 
-.cards > ul > li img {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
+main .cards .cards-card-body strong {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+/* whole-card link (click handled in cards.js) */
+main .cards .linked {
+  cursor: pointer;
+}
+
+main .cards .linked:focus-within {
+  outline: 2px solid var(--brand);
+  outline-offset: 3px;
+}
+
+main .cards .cards-card-more {
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.2;
+  margin-top: 8px;
+}
+
+main .cards h3 a {
+  color: inherit;
+}
+
+/* flow cards: imagery fills the card */
+main .cards .cards-card.flow {
+  overflow: hidden;
+  color: #fff;
+}
+
+main .cards .cards-card.flow .overline {
+  color: #fff;
+}
+
+/* --- audience: fast lanes --- */
+main .cards.audience .cards-card {
+  border-radius: var(--r-xl);
+  padding: var(--s-lg);
+  min-height: 260px;
+  justify-content: flex-end;
+  transition: transform 0.18s;
+}
+
+main .cards.audience .cards-card:hover {
+  transform: translateY(-4px);
+}
+
+main .cards.audience h3 {
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: #fff;
+}
+
+/* --- teaser: operating companies --- */
+main .cards.teaser .cards-card {
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  background: rgb(255 255 255 / 70%);
+  box-shadow: var(--shadow);
+}
+
+main .cards.teaser .cards-card-image {
+  height: 200px;
+}
+
+main .cards.teaser .cards-card-body {
+  padding: var(--s-lg);
+}
+
+main .cards.teaser .cards-card-body .overline {
+  align-self: flex-start;
+  border-radius: 999px;
+  background: var(--brand-chip);
+  color: var(--text-brand);
+  font-size: 13px;
+  letter-spacing: 0;
+  text-transform: none;
+  padding: 6px 12px;
+}
+
+main .cards.teaser .cards-card-body p:not(.overline, .cards-card-more) {
+  color: var(--text-2);
+}
+
+main .cards.teaser .cards-card-more,
+main .cards.story .cards-card-more {
+  color: var(--brand);
+}
+
+/* --- story, panel, year: glass cards --- */
+main .cards.story .cards-card,
+main .cards.panel .cards-card,
+main .cards.year .cards-card {
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(16px);
+  box-shadow: var(--shadow);
+  border-radius: var(--r-lg);
+  padding: var(--s-lg);
+}
+
+main .cards.story .cards-card {
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+main .cards.story .cards-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgb(0 43 143 / 12%);
+}
+
+main .cards.story .cards-card-body {
+  gap: 10px;
+  height: 100%;
+}
+
+main .cards.story .cards-card-body p:not(.cards-card-more) {
+  color: var(--text-2);
+}
+
+main .cards.story .cards-card-more {
+  margin-top: auto;
+}
+
+main .cards.panel .cards-card-body {
+  gap: var(--s-md);
+}
+
+main .cards.panel .cards-card-body p:not(.overline) {
+  color: var(--text-2);
+}
+
+main .cards.year h3 {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--brand);
+}
+
+main .cards.year .cards-card-body p:last-child {
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--text-2);
+}
+
+/* --- image: flow tiles --- */
+main .cards.image .cards-card {
+  border-radius: var(--r-lg);
+  padding: 120px var(--s-lg) var(--s-lg);
+  justify-content: flex-end;
+  gap: 6px;
+}
+
+main .cards.image .cards-card-body {
+  gap: 6px;
+}
+
+main .cards.image h2,
+main .cards.image h3 {
+  color: #fff;
+}
+
+/* --- tile: link grid --- */
+main .cards.tile > ul {
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+
+main .cards.tile .cards-card {
+  padding: 20px 48px 20px 20px;
+  border-radius: var(--r-lg);
+  background: rgb(255 255 255 / 75%);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 4px 18px rgb(0 43 143 / 6%);
+  transition: transform 0.12s, background 0.12s;
+}
+
+main .cards.tile .cards-card:hover {
+  background: #fff;
+  transform: translateY(-2px);
+}
+
+main .cards.tile .cards-card-body {
+  gap: 6px;
+}
+
+main .cards.tile h3 {
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+main .cards.tile .cards-card-body p:not(.overline) {
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--text-2);
+}
+
+main .cards.tile .go2 {
+  position: absolute;
+  right: 16px;
+  top: 20px;
+  width: 20px;
+  height: 20px;
+  background: var(--brand);
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none'%3E%3Cpath d='M4 10h12M11 5l5 5-5 5' stroke='black' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
+/* --- tint: therapy platforms --- */
+main .cards.tint .cards-card {
+  background: var(--brand-tint);
+  border-radius: var(--r-lg);
+  padding: var(--s-lg);
+}
+
+main .cards.tint h3 {
+  color: var(--brand);
+}
+
+main .cards.tint .cards-card-body p {
+  color: var(--text-2);
+}
+
+@media (width >= 1000px) {
+  main .cards:not(.tile) > ul {
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(0, 1fr);
+  }
+
+  main .cards.audience .cards-card {
+    min-height: 400px;
+  }
+
+  main .cards.audience h3 {
+    font-size: 36px;
+  }
 }

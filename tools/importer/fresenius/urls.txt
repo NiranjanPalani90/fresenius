@@ -1,0 +1,16 @@
+http://127.0.0.1:8765/index.html
+http://127.0.0.1:8765/investors.html
+http://127.0.0.1:8765/investors/results-q3-2026.html
+http://127.0.0.1:8765/investors/dashboard.html
+http://127.0.0.1:8765/about.html
+http://127.0.0.1:8765/our-businesses.html
+http://127.0.0.1:8765/impact.html
+http://127.0.0.1:8765/newsroom.html
+http://127.0.0.1:8765/careers.html
+http://127.0.0.1:8765/newsroom/fresenius-reorganizes-hospital-services.html
+http://127.0.0.1:8765/explain/helios.html
+http://127.0.0.1:8765/explain/kabi.html
+http://127.0.0.1:8765/about/ai-assisted-views.html
+http://127.0.0.1:8765/about/ai-assisted-views-employees.html
+http://127.0.0.1:8765/nav.html
+http://127.0.0.1:8765/footer.html

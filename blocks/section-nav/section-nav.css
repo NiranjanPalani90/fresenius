@@ -1,0 +1,48 @@
+main .section:has(> .section-nav-wrapper) {
+  position: sticky;
+  top: 84px;
+  z-index: 15;
+  align-self: flex-start;
+  width: auto;
+  animation: none;
+}
+
+main .section-nav .secnav {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  padding: 8px;
+  border-radius: 20px;
+  background: rgb(255 255 255 / 78%);
+  backdrop-filter: blur(14px);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 4px 18px rgb(0 43 143 / 8%);
+}
+
+main .section-nav a {
+  border-radius: 999px;
+  padding: 8px 14px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--text-2);
+}
+
+main .section-nav a:hover {
+  background: var(--brand-hover);
+}
+
+main .section-nav a.on {
+  background: var(--brand-tint);
+  color: var(--text-brand);
+}
+
+@media (width >= 1000px) {
+  main .section:has(> .section-nav-wrapper) {
+    top: 96px;
+  }
+
+  main .section-nav .secnav {
+    border-radius: 999px;
+  }
+}

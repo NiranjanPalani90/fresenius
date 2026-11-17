@@ -1,0 +1,96 @@
+main .chart {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-md);
+}
+
+main .chart .chart-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+main .chart .legend {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  font-size: 13px;
+  color: var(--text-2);
+  align-items: center;
+}
+
+main .chart .legend i {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+
+main .chart .legend i.band {
+  width: 18px;
+  border-radius: 3px;
+  opacity: 0.3;
+}
+
+main .chart .chart-box {
+  position: relative;
+}
+
+main .chart .chart-box svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  overflow: visible;
+}
+
+main .chart .chart-box .hit {
+  cursor: pointer;
+  outline: none;
+}
+
+main .chart .chart-box .hit:focus-visible {
+  stroke: var(--brand);
+  stroke-width: 2;
+}
+
+main .chart .tip {
+  position: absolute;
+  pointer-events: none;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  padding: 10px 12px;
+  font-size: 13px;
+  line-height: 1.45;
+  min-width: 180px;
+  opacity: 0;
+  transition: opacity 0.12s;
+  z-index: 5;
+}
+
+main .chart .tip.show {
+  opacity: 1;
+}
+
+main .chart .tip .tv {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+main .chart .tip .tm {
+  color: #667085;
+}
+
+/* data table kept for screen readers */
+main .chart .chart-table {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
